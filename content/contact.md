@@ -12,6 +12,6 @@ Over the years I've been involved with several manufacturing and on-line product
 
 ### Consultant uzERP
 
-When wearing my 'IT consulting' I help small companies with IT issues involving data, operations and accounting.
+When wearing my 'IT consulting' hat I help small companies with IT issues involving data, operations and accounting.
 
 I developed, in conjunction with others, the Open Source ERP system __uzERP__. You can find more info [here](https://www.uzerp.com) and [here](https://github.com/uzerpllp/uzerp) or send me an [email](mailto:mhiner@uzerp.com).

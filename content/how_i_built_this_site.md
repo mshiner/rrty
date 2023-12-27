@@ -59,7 +59,7 @@ More searches, and I found this [article](https://www.thenewdynamic.com/article/
 
 I was now able to dynaically generate web content directly from my sheet.
 
-Finally, on the Hugo side I neededa 'theme'. In general I don't use pre packaged themes because I like to know what is going on with my sites. Since this was a hobby project, and I needed something simple I used [Missing CSS Stylesheet](https://missing.style/) which has pretty good default styling.
+Finally, on the Hugo side I needed a 'theme'. In general I don't use pre packaged themes because I like to know what is going on with my sites. Since this was a hobby project, and I needed something simple, I used the [Missing CSS Stylesheet](https://missing.style/) which has pretty good default styling for basic markup.
 
 ## Netlify & GitHub
 
@@ -92,4 +92,4 @@ function build() {
 
 This was a fun little project that got me back into Hugo after a bit of a break. It took a bit of time to pull the pices together, but I think the result is pretty good.
 
-All of the code is here on the [GitHub repo](https://github.com/mshiner?tab=repositories)
+All of the code is here on the [GitHub repo](https://github.com/mshiner/rrty).
