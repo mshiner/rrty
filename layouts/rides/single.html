@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+    <h1>{{ .Params.Ride_Name }}</h1>
+
+    <h3>Ride Details</h3>
+    Series {{ .Params.Series }}, Ride number {{ .Params.Ride_Number }}
+    <ul>
+        <li>Date Ridden - {{ time.Format "Monday 2 January 2006" .Params.Ride_Date }}</li> 
+        <li>Event Type - {{ .Params.Event_Type }}</li>
+        <li>Points Distance - {{ .Params.Points_Distance }}</li>
+    </ul>
+
+    <h3>Ride Stats</h3>
+    <ul>
+        <li>Distance - {{ .Params.Distance }} km</li>
+        <li>Time - {{ time.Duration "second" .Params.Moving_Time_Seconds }}</li>
+        <li>Elapsed time - {{ time.Duration "second" .Params.Elapsed_Time_seconds }}</li>
+        <li>Avg Speed - {{ .Params.Average_Speed }} km/h</li>
+        <li>Elevation - {{ .Params.Elevation }} metres</li>
+        <li>Bike - {{ .Params.Bike }}</li>
+    </ul>
+    
+    <h3>Ride Notes</h3>
+    <p>
+        {{ .Params.Ride_Notes |markdownify }}
+    </p>
+    
+    Open this ride on <a href="https://www.strava.com/activities/{{ string .Params.Strava_id }}">
+        <strong>Strava</strong></a>
+{{ end }}
+

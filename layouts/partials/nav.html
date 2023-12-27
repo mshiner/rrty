@@ -1,0 +1,10 @@
+<header class="navbar">
+    <nav id="nav">
+        <ul role="list" class="align-items:center">     
+            {{ range .Site.Menus.main }}
+            {{ $text := .Name | safeHTML }}
+            <a class="nav-link" href="{{ .URL }}">{{ $text }}</a>
+            {{ end }}
+        </ul>
+    </nav>
+</header>

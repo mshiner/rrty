@@ -1,0 +1,66 @@
+baseURL = 'https://rrty.co.uk/'
+languageCode = 'en-us'
+title = "Shiney's RRtY"
+
+paginate = 12
+
+[params]
+  homeText = "Martyn Shiner's RRtY site built with Hugo from Google Sheets data."
+
+
+[module]
+  [[module.mounts]]
+    source = 'content'
+    target = 'content'
+  [[module.mounts]]  
+    source = 'prebuild/public/ride'
+    target = 'content/rides'
+  [[module.mounts]]  
+    source = 'prebuild/public/bike'
+    target = 'content/bikes'
+  [[module.mounts]]  
+    source = 'prebuild/public/series'
+    target = 'content/series'
+  [[module.mounts]]  
+    source = 'prebuild/public/stats'
+    target = 'content/stats'
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "All Rides"
+    url = "/rides/"
+    weight = 2
+  [[menu.main]]
+    name = "Stats"
+    url = "/stats/1"
+    weight = 3
+  [[menu.main]]
+    name = "Series"
+    url = "/series/"
+    weight = 4
+  [[menu.main]]
+    name = "Bikes"
+    url = "/bike/"
+    weight = 5
+  [[menu.main]]
+    name = "Event Types"
+    url = "/event_type/"
+    weight = 6
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 7
+
+# By default, a blog post permalink will be /blog/:filename: - this changes this to be just the filename
+[permalinks]
+  rides = "/:filename/"
+
+[taxonomies]
+  series = "series"
+  event_type = "event_type"
+  bike = "bike"
+  

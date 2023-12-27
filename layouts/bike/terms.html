@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<!-- We need some extra stuff here as the title is bike-->
+{{ $title := replace .Title "_" " " }}
+<h1>{{ title $title }}</h1>
+<hr>  
+    {{ range $name, $taxonomy := .Site.Taxonomies.bike }}
+        {{ $bike_name := $name }}
+        {{ $bike_path := (printf "/bike/%s" (urlize $name)) }}
+        {{ $bike_page := site.GetPage $bike_path }}
+        {{ if $bike_page }}
+            {{ $bike_name = $bike_page.Title }}
+        {{ end }}
+        <p><a href="{{ $bike_path | relLangURL }}"> <strong>{{ $bike_name }}</strong></a>  <br>Number of rides - {{ $taxonomy.Count }}</p>
+    {{ end }}
+
+{{ end }}

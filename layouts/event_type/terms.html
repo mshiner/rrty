@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<!-- We need some extra stuff here as the title is event_type-->
+{{ $title := replace .Title "_" " " }}
+<h1>{{ title $title }}</h1>
+<hr>  
+    {{ range $name, $taxonomy := .Site.Taxonomies.event_type }}
+        {{ $event_type_name := $name }}
+        {{ $event_type_path := (printf "/event_type/%s" (urlize $name)) }}
+        {{ $event_type_page := site.GetPage $event_type_path }}
+        {{ if $event_type_page }}
+            {{ $event_type_name = $event_type_page.Title }}
+        {{ end }}
+        <p><a href="{{ $event_type_path | relLangURL }}"> <strong>{{ $event_type_name }}</strong></a>  <br>Number of rides - {{ $taxonomy.Count }}</p>
+    {{ end }}
+
+{{ end }}

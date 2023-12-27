@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+<h1>{{ .Title }}</h1>
+<hr>
+    {{ range $name, $taxonomy := .Site.Taxonomies.series }}
+        {{ $series_name := $name }}
+        {{ $series_path := (printf "/series/%s" (urlize $name)) }}
+        {{ $series_page := site.GetPage $series_path }}
+        {{ if $series_page }}
+            {{ $series_name = $series_page.Title }}
+        {{ end }}
+        <p><a href="{{ $series_path | relLangURL }}"><strong>{{ $series_name }}</strong></a>  <br>Number of rides - {{ $taxonomy.Count }}</p>
+    {{ end }}
+
+{{ end }}

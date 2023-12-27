@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<article>
+  <h1>{{ .Site.Title }}</h1>
+    <hr>
+    {{ .Site.Params.homeText | markdownify }}
+    
+    <h3>About this site</h3>
+      
+        I have been doing the Audax UK Randonneur Round the Year (RRtY) challenge since 2019. According to the 
+        <a href="https://www.audax.uk/awards-pages/randonneur-round-the-year">Audax UK website</a>
+        this is: 
+        <blockquote>"One of the tougher challenges on offer, RRtY requires a BR or BRM event in each of 12 successive calendar months"</blockquote>
+        I record all of my rides in Strava, but wanted a way to keep track of just the RRtY challenge rides. I set up a Google Sheet to record this data (see
+        <a href="https://docs.google.com/spreadsheets/d/1TAUWxkgA3-jabqwDXePXlvqRzzaVUuA8SVyuiIlfxiQ/edit#gid=2069828909">here</a>) but wanted a better way to
+        share the content with the world.
+      </p>
+      <p>
+        So here it is..... <a href="{{ .RelPermalink }}rides/">
+        <strong>Shiney's RRtY</strong></a>
+      </p>
+
+  <h3>About me</h3>
+      <p>
+        Evil bearded accountant. Opinionated. Randonneur. Likes numbers, code and Belgian beer.
+      </p>
+      <p>
+        If you are interested in understanding how I built this site then have a look at the <a href="/how_i_built_this_site/">this page</a>.
+      </p>
+  </p>
+</article> 
+
+{{ end }}

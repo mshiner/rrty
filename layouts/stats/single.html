@@ -1,0 +1,55 @@
+{{ define "main"}}
+
+  <h1>RRtY Ride Statistics</h1>
+  To tie up with the Audax 'rules' I'm using metric units for distance, speed and elevation.
+  
+  <h3>Total number of rides to date = {{ .Params.Number_of_Rides }}</h3>
+  
+ 
+  <details>
+    <summary>
+      Distance (km)
+    </summary>
+      <ul>
+        <li>Longest ride - {{ .Params.Longest_Ride_km | lang.FormatNumber 0 }} km</li>
+        <li>Total distance ridden to date - {{ .Params.Distance_Ridden_km | lang.FormatNumber 0 }} km</li>
+      </ul>
+  </details>
+  
+  
+  <details>
+    <summary>Time</summary>
+    <h4>Moving</h4>
+    <ul>
+      <li>Fastest 200km ride - {{ time.Duration "second" .Params.Fastest_Ride_200km }}</li>
+      <li>Slowest 200km ride - {{ time.Duration "second" .Params.Slowest_Ride_200km }}</li>
+    </ul>
+    <h4>Elapsed</h4>
+    <ul>
+      <li>Minimum - {{ time.Duration "second" .Params.Minimum_Elapsed_Time }}</li>
+      <li>Maximum - {{ time.Duration "second" .Params.Maximum_Elapsed_Time }}</li>
+    </ul>
+    <h4>Total riding time to date</h4>
+    <ul>
+      <li>Moving - {{ time.Duration "second" .Params.Total_Moving_Time }}</li>
+      <li>Elapsed - {{ time.Duration "second" .Params.Total_Elapsed_Time }}</li>
+    </ul>
+  </details>
+  
+  <details>
+    <summary>Speed (km/h)</summary>
+    <ul>
+      <li>Highest Average Speed - {{ .Params.Highest_Average_Speed }} km/h</li>
+      <li>Lowest Average Speed - {{ .Params.Lowest_Average_Speed }} km/h</li>
+    </ul>
+  </details>
+
+  <details>
+  <summary>Climbing (metres)</summary>
+    <ul>
+      <li>Most metres climbed in one ride - {{ .Params.Most_metres_climbed | lang.FormatNumber 0 }} metres</li>
+      <li>Total metres climbed to date - {{ .Params.Total_metres_climbed | lang.FormatNumber 0 }} metres</li>
+    </ul>  
+  </details>
+
+{{ end }}

@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+  <!-- We need some extra stuff here to remove the underscore in the event_type-->
+  {{ $dataTitle := replace .Data.Plural "_" " " }}
+  <h1>Rides for {{ strings.FirstUpper $dataTitle }} - {{ .Title }}</h1>
+  <p>Go back to <a href="/{{ .Data.Plural }}">{{ strings.FirstUpper $dataTitle }} list</a>.</p>
+  <hr>
+
+  {{- $sortedPages := .Pages.ByParam "Ride_Date" }}
+  {{ $paginator := .Paginate $sortedPages}}
+
+  {{- range $index, $paginator.Pages }}
+    <p>
+      <a href="{{ .RelPermalink }}"><strong>{{ .Params.Ride_Name }}</strong></a>
+      -
+      {{ time.Format "2 January 2006" .Params.Ride_Date }}
+    </p>
+  {{ end }}
+
+  {{ template "_internal/pagination.html" . }}  
+
+{{ end }}

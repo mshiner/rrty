@@ -1,0 +1,37 @@
+<!-- Generate markdown files for rides -->
+{{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbw0dxiZkhWorItBjRT-h_oUFL661RLsbMddN6smSjWt4pkV28NwnalGq7X1mRovcAkT/exec?path=rides" }}
+  {{ $bikes := unmarshal .Content }}
+  {{ range $bikes }}
+    <!-- Create the JSON version of our Ride -->
+    {{ $string := jsonify . }} 
+    
+    <!-- Create its filename by urlizing its title and using printf to include a directory -->
+    {{ $filename := printf "ride/%s.md" (urlize .id) }} 
+    
+    <!-- Generate the markdown resource using resources.FromString -->
+     {{ $resource := resources.FromString $filename $string }} 
+    
+    <!--Make sure it’s published */ -->
+    {{ $file := $resource.RelPermalink }} 
+
+  {{ end }}
+{{ end }}
+
+<!-- Generate markdown file for stats -->
+{{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbw0dxiZkhWorItBjRT-h_oUFL661RLsbMddN6smSjWt4pkV28NwnalGq7X1mRovcAkT/exec?path=stats" }}
+  {{ $stats := unmarshal .Content }}
+  {{ range $stats }}
+    <!-- Create the JSON version of our stats -->
+    {{ $string := jsonify . }} 
+    
+    <!-- Create its filename by urlizing its title and using printf to include a directory -->
+    {{ $filename := printf "stats/%s.md" (urlize .stats_id) }} 
+    
+    <!-- Generate the markdown resource using resources.FromString -->
+     {{ $resource := resources.FromString $filename $string }} 
+    
+    <!--Make sure it’s published */ -->
+    {{ $file := $resource.RelPermalink }} 
+
+  {{ end }}
+{{ end }}
