@@ -1,0 +1,1 @@
+{"Bike_Name":"Cannondale CAADX","Current":"Yes","Frame_Material":"Aluminium","Information":"The do-it-all - commuter/cross/gravel bike that sometimes gets pressed into Audax service with the Hunt SL wheels fitted."}

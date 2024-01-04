@@ -1,0 +1,1 @@
+{"Bike_Name":"Planet X RT-58","Current":"No","Frame_Material":"Carbon","Information":"This was the best bike that I crashed in 2015. Was a 'hack' for a while and was used on one ECE when I didn't have another bike available."}

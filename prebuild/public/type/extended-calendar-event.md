@@ -1,0 +1,1 @@
+{"Description":"Enter a calendar event and then ride there (and/or back).","Link":"https://www.audax.uk/about-audax/event-types/extended-calendar-events-eces/","Type_Name":"Extended Calendar Event"}

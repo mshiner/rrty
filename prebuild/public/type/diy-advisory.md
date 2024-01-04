@@ -1,0 +1,1 @@
+{"Description":"Plan a route and ride - these types of ride are flexible and use GPS or \"traditional\" proof of passage methods.","Link":"https://www.audax.uk/about-audax/event-types/do-it-yourself-diy-events/","Type_Name":"DIY (Advisory)"}

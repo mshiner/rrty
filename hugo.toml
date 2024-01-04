@@ -16,14 +16,18 @@ paginate = 12
     source = 'prebuild/public/ride'
     target = 'content/rides'
   [[module.mounts]]  
-    source = 'prebuild/public/bike'
-    target = 'content/bikes'
-  [[module.mounts]]  
-    source = 'prebuild/public/series'
-    target = 'content/series'
-  [[module.mounts]]  
     source = 'prebuild/public/stats'
     target = 'content/stats'
+  [[module.mounts]]  
+    source = 'prebuild/public/bike'
+    target = 'data/bike'
+  [[module.mounts]]  
+    source = 'prebuild/public/type'
+    target = 'data/event_type'
+  [[module.mounts]]  
+    source = 'prebuild/public/series'
+    target = 'data/series'
+  
 
 [menu]
   [[menu.main]]

@@ -1,0 +1,1 @@
+{"Description":"Another Plan Your Own Route type but this time you must folow the exact GPS track submitted.","Link":"https://www.audax.uk/about-audax/event-types/do-it-yourself-diy-events/","Type_Name":"DIY (Mandatory)"}
