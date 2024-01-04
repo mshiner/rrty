@@ -1,7 +1,7 @@
 {{ define "main" }}
 
-<!-- We need some extra stuff here as the title is bike-->
-{{ $title := replace .Title "_" " " }}
+<!-- We need some extra stuff here as the title is bike and we want Bikes-->
+{{ $title := print  .Title "s" }}
 <h1>{{ title $title }}</h1>
 <hr>  
     {{ range $name, $taxonomy := .Site.Taxonomies.bike }}

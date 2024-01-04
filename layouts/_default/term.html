@@ -2,8 +2,8 @@
 
   <!-- We need some extra stuff here to remove the underscore in the event_type-->
   {{ $dataTitle := replace .Data.Plural "_" " " }}
-  <h1>Rides for {{ strings.FirstUpper $dataTitle }} - {{ .Title }}</h1>
-  <p>Go back to <a href="/{{ .Data.Plural }}">{{ strings.FirstUpper $dataTitle }} list</a>.</p>
+  <h1>{{ .Title }}</h1>
+  <h3>Rides for this {{ strings.FirstUpper $dataTitle }}</h3>
   <hr>
 
   {{- $sortedPages := .Pages.ByParam "Ride_Date" }}
@@ -18,5 +18,7 @@
   {{ end }}
 
   {{ template "_internal/pagination.html" . }}  
+  <hr>
+  <p>Go back to <a href="/{{ .Data.Plural }}">{{ strings.FirstUpper $dataTitle }} list</a>.</p>
 
 {{ end }}

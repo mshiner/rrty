@@ -1,7 +1,9 @@
 {{ define "main" }}
 
-<!-- We need some extra stuff here as the title is event_type-->
-{{ $title := replace .Title "_" " " }}
+<!-- We need some extra stuff here as the title is event_type and we want event types-->
+{{ $extract := replace .Title "_" " " }}
+{{ $title := print $extract "s" }}
+
 <h1>{{ title $title }}</h1>
 <hr>  
     {{ range $name, $taxonomy := .Site.Taxonomies.event_type }}
