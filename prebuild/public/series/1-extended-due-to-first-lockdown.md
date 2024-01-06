@@ -1,1 +1,0 @@
-{"Description":"I had to extend the series because of the crazy lockdown. ","Months":16,"Series_End":"2020-12-31T00:00:00.000Z","Series_Start":"2019-07-31T23:00:00.000Z","Series_id":"1 Extended due to first lockdown"}

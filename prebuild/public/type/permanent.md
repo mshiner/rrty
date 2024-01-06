@@ -1,1 +1,0 @@
-{"Description":"","Link":"https://www.audax.uk/about-audax/event-types/permanent-events/","Type_Name":"Permanent"}
