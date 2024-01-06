@@ -20,68 +20,14 @@
 {{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbw0dxiZkhWorItBjRT-h_oUFL661RLsbMddN6smSjWt4pkV28NwnalGq7X1mRovcAkT/exec?path=stats" }}
   {{ $stats := unmarshal .Content }}
   {{ range $stats }}
-    <!-- Create the JSON version of our stats -->
+    <!-- Create the JSON version of our stats - there is only one row -->
     {{ $string := jsonify . }} 
     
-    <!-- Create its filename by urlizing its title and using printf to include a directory -->
-    {{ $filename := printf "stats/%s.md" (urlize .stats_id) }} 
+    <!-- Create a file for the stats section - always _index.md and using printf to include a directory -->
+    {{ $filename := printf "stats/_index.md" }} 
     
     <!-- Generate the markdown resource using resources.FromString -->
      {{ $resource := resources.FromString $filename $string }} 
-    
-    <!--Make sure it’s published */ -->
-    {{ $file := $resource.RelPermalink }} 
-  {{ end }}
-{{ end }}
-
-<!-- Generate markdown file for bikes -->
-{{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbw0dxiZkhWorItBjRT-h_oUFL661RLsbMddN6smSjWt4pkV28NwnalGq7X1mRovcAkT/exec?path=bikes" }}
-  {{ $bikes := unmarshal .Content }}
-  {{ range $bikes }}
-    <!-- Create the JSON version of our bikes -->
-    {{ $string := jsonify . }} 
-    
-    <!-- Create its filename by urlizing its title and using printf to include a directory -->
-    {{ $filename := printf "bike/%s.md" (urlize .Bike_Name) }} 
-    
-    <!-- Generate the markdown resource using resources.FromString -->
-     {{ $resource := resources.FromString $filename $string }} 
-    
-    <!--Make sure it’s published */ -->
-    {{ $file := $resource.RelPermalink }} 
-  {{ end }}
-{{ end }}
-
-<!-- Generate markdown file for event types -->
-{{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbw0dxiZkhWorItBjRT-h_oUFL661RLsbMddN6smSjWt4pkV28NwnalGq7X1mRovcAkT/exec?path=types" }}
-  {{ $types := unmarshal .Content }}
-  {{ range $types }}
-    <!-- Create the JSON version of our event types -->
-    {{ $string := jsonify . }} 
-    
-    <!-- Create its filename by urlizing its title and using printf to include a directory -->
-    {{ $filename := printf "type/%s.md" (urlize .Type_Name) }} 
-    
-    <!-- Generate the markdown resource using resources.FromString -->
-    {{ $resource := resources.FromString $filename $string }} 
-    
-    <!--Make sure it’s published */ -->
-    {{ $file := $resource.RelPermalink }} 
-  {{ end }}
-{{ end }}
-
-<!-- Generate markdown file for series -->
-{{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbw0dxiZkhWorItBjRT-h_oUFL661RLsbMddN6smSjWt4pkV28NwnalGq7X1mRovcAkT/exec?path=series" }}
-  {{ $series := unmarshal .Content }}
-  {{ range $series }}
-    <!-- Create the JSON version of our event types -->
-    {{ $string := jsonify . }} 
-    
-    <!-- Create its filename by urlizing its title and using printf to include a directory -->
-    {{ $filename := printf "series/%s.md" (urlize .Series_id) }} 
-    
-    <!-- Generate the markdown resource using resources.FromString -->
-    {{ $resource := resources.FromString $filename $string }} 
     
     <!--Make sure it’s published */ -->
     {{ $file := $resource.RelPermalink }} 

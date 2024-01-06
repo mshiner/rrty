@@ -18,17 +18,7 @@ paginate = 12
   [[module.mounts]]  
     source = 'prebuild/public/stats'
     target = 'content/stats'
-  [[module.mounts]]  
-    source = 'prebuild/public/bike'
-    target = 'data/bike'
-  [[module.mounts]]  
-    source = 'prebuild/public/type'
-    target = 'data/event_type'
-  [[module.mounts]]  
-    source = 'prebuild/public/series'
-    target = 'data/series'
   
-
 [menu]
   [[menu.main]]
     name = "Home"
@@ -40,7 +30,7 @@ paginate = 12
     weight = 2
   [[menu.main]]
     name = "Stats"
-    url = "/stats/1"
+    url = "/stats/"
     weight = 3
   [[menu.main]]
     name = "Series"
