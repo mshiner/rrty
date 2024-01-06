@@ -3,6 +3,17 @@
   <!-- We need some extra stuff here to remove the underscore in the event_type-->
   {{ $dataTitle := replace .Data.Plural "_" " " }}
   <h1>{{ .Title }}</h1>
+
+  <!-- Go back to sheet and get some info about the bike-->    
+  {{ $data := "" }}  
+  {{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbw0dxiZkhWorItBjRT-h_oUFL661RLsbMddN6smSjWt4pkV28NwnalGq7X1mRovcAkT/exec?path=types" }}
+    {{ $data = . | transform.Unmarshal }}
+  {{ end }}
+
+  {{ range where $data "Type_Name" .Data.Term }}
+    <p>{{ .Description|markdownify }}</p>
+  {{ end }}
+    
   <h3>Rides for this {{ strings.FirstUpper $dataTitle }}</h3>
   <hr>
 
