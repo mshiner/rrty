@@ -3,7 +3,7 @@
   <h1>{{ .Title }}</h1>
   <hr>
 
-  {{- $sortedPages := .Pages.ByParam "Ride_Date" }}
+  {{- $sortedPages := (.Pages.ByParam "Ride_Date").Reverse }}
   {{ $paginator := .Paginate $sortedPages}}
 
   {{- range $index, $paginator.Pages }}
