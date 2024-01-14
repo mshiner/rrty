@@ -20,6 +20,15 @@
         <strong>Shiney's RRtY</strong></a>
       </p>
 
+      The latest ride in the series is 
+      {{ range (where .Site.Pages "Section" "rides") }}
+        {{ range (.Pages.ByParam "Ride_Date") | last 1 }}
+          <a href="{{ .RelPermalink }}" title="{{ .Title }}">
+            <strong>{{ .Params.Ride_Name }}</strong></a>
+            which I rode on {{ time.Format "2 January 2006" .Params.Ride_Date }}.
+        {{ end }}
+      {{ end }}
+
   <h3>About me</h3>
       <p>
         Evil bearded accountant. Opinionated. Randonneur. Likes numbers, code and Belgian beer.
