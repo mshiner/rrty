@@ -46,8 +46,9 @@ function doGet(e) {
   return json(path)
 }
 ```
-
 So now the data was 'available' on the web. Next thing was to publish it.
+
+Side note - there's a small problem with daylight saving ime (BST) in Google sheets. In order for the correct date to be output the timezone of the sheet has to be set to London/GMT no daylight saving.
 
 ## Hugo 'dynamic' pages
 
