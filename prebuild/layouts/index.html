@@ -1,5 +1,5 @@
 <!-- Generate markdown files for rides -->
-{{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbwNhPutE3hM1QeAL04g5SBe-MbxcO5q9cBYqfNe-ZQMZYQapquGQejegXNVXGlqfPZL/exec?path=rides" }}
+{{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbzwn4iP6PrA0fiw6wfne0eY-YZWikFZhYOp66skW7UUuyrtJjTNxpFHfB1pC8XhHXcXAw/exec?path=rides" }}
 
   {{ $bikes := unmarshal .Content }}
   {{ range $bikes }}
@@ -18,7 +18,7 @@
 {{ end }}
 
 <!-- Generate markdown file for stats -->
-{{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbwNhPutE3hM1QeAL04g5SBe-MbxcO5q9cBYqfNe-ZQMZYQapquGQejegXNVXGlqfPZL/exec?path=stats" }}
+{{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbzwn4iP6PrA0fiw6wfne0eY-YZWikFZhYOp66skW7UUuyrtJjTNxpFHfB1pC8XhHXcXAw/exec?path=stats" }}
   {{ $stats := unmarshal .Content }}
   {{ range $stats }}
     <!-- Create the JSON version of our stats - there is only one row -->

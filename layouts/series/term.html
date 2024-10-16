@@ -6,7 +6,7 @@
 
   <!-- Go back to sheet and get some info about the bike-->    
   {{ $data := "" }}  
-  {{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbwNhPutE3hM1QeAL04g5SBe-MbxcO5q9cBYqfNe-ZQMZYQapquGQejegXNVXGlqfPZL/exec?path=series" }}
+  {{ with resources.GetRemote "https://script.google.com/macros/s/AKfycbzwn4iP6PrA0fiw6wfne0eY-YZWikFZhYOp66skW7UUuyrtJjTNxpFHfB1pC8XhHXcXAw/exec?path=series" }}
     {{ $data = . | transform.Unmarshal }}
   {{ end }}
 
